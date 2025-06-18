@@ -144,7 +144,8 @@ const Home = () => {
           }
           
           .hero {
-            min-height: 90vh;
+            min-height: 0; /* Remove fixed min-height to allow flexibility */
+            height: auto; /* Allow height to adjust based on content */
             display: flex;
             align-items: center;
             padding: 60px 0;
@@ -172,11 +173,14 @@ const Home = () => {
             display: flex;
             align-items: center;
             gap: 10px;
+            word-break: break-word; /* Allow text to break and wrap */
           }
           
           .app-header-image {
             height: 200px;
             width: auto;
+            max-width: 100%; /* Ensure image scales down on smaller screens */
+            object-fit: contain; /* Prevent cropping */
           }
           
           .hero-subtitle {
@@ -241,6 +245,8 @@ const Home = () => {
             position: relative;
             width: 320px;
             height: 700px;
+            max-height: 70vh; /* Limit height on mobile to prevent overflow */
+            overflow: hidden;
           }
           
           .phone-screen {
@@ -380,12 +386,27 @@ const Home = () => {
             }
             
             .hero-title {
-              font-size: 2.5rem;
+              font-size: 2rem; /* Reduced for mobile */
+              flex-wrap: wrap; /* Allow wrapping */
+            }
+            
+            .app-header-image {
+              height: 120px; /* Reduced height for mobile */
+              max-width: 80%; /* Scale down further */
+            }
+            
+            .hero-subtitle {
+              font-size: 1.2rem;
+            }
+            
+            .hero-description {
+              font-size: 1rem;
             }
             
             .phone-mockup {
               width: 260px;
               height: 570px;
+              max-height: 60vh; /* Further limit height on mobile */
             }
             
             .features-grid {

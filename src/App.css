@@ -1,42 +1,140 @@
-#root {
-  max-width: 1280px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Somali-inspired gradient background */
+.somali-gradient {
+  background: linear-gradient(
+    180deg,
+    #4189DD 0%,
+    rgba(65, 137, 221, 0.8) 30%,
+    #ffffff 100%
+  );
+}
+
+/* Sand texture overlay */
+.sand-texture {
+  position: relative;
+}
+
+.sand-texture::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 248, 220, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 248, 220, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 248, 220, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Star accent */
+.star-accent {
+  color: #ffffff;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Blue accent from flag */
+.somali-blue {
+  color: #4189DD;
+}
+
+.somali-blue-bg {
+  background-color: #4189DD;
+}
+
+/* Container styles */
+.container {
+  width: 90%;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.container-full {
+  width: 100%;
+  padding: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.btn-primary {
+  background: linear-gradient(135deg, #4189DD, #5a9de8);
+  color: white;
+  box-shadow: 0 4px 15px rgba(65, 137, 221, 0.3);
 }
 
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(65, 137, 221, 0.4);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: #4189DD;
+  border: 2px solid #4189DD;
+}
+
+.btn-secondary:hover {
+  background: #4189DD;
+  color: white;
+}
+
+/* Card styles */
 .card {
-  padding: 2em;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.read-the-docs {
-  color: #888;
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .btn {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+  
+  .card {
+    padding: 20px;
+    margin: 10px 0;
+  }
 }

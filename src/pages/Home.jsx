@@ -98,7 +98,7 @@ const Home = () => {
             </div>
             <div className="feature-card card">
               <div className="feature-icon star-accent">
-                <Globe className="w-12 h-12" />
+                <Globe className="w-12 h-6" />
               </div>
               <h3>Feature-Rich Content</h3>
               <p>Feature-rich, curated by Somali linguistics experts with deep cultural insights and tailored language resources.</p>
@@ -121,14 +121,15 @@ const Home = () => {
             <h2 className="download-title star-accent">Download Our App Today</h2>
             <p className="download-subtitle">Join thousands of users connecting English and Somali languages</p>
             <div className="download-buttons">
-              <a href="#" className="download-btn">
+              <a href="https://apps.apple.com/us/app/baro/id6747272426" className="download-btn">
                 <img src={appStoreLogo} alt="Download on App Store" />
               </a>
-              <a href="#" className="download-btn">
-                <img src={playStoreLogo} alt="Get it on Google Play" />
-              </a>
+              <div className="download-btn coming-soon-wrapper">
+                <img src={playStoreLogo} alt="Coming Soon on Google Play" className="disabled" />
+                <span className="coming-soon-text">Coming Soon</span>
+              </div>
             </div>
-            <p className="download-note">Available for iOS and Android devices</p>
+            <p className="download-note">Available for iOS, coming soon for Android devices</p>
           </div>
         </div>
       </section>
@@ -144,8 +145,8 @@ const Home = () => {
           }
           
           .hero {
-            min-height: 0; /* Remove fixed min-height to allow flexibility */
-            height: auto; /* Allow height to adjust based on content */
+            min-height: 0;
+            height: auto;
             display: flex;
             align-items: center;
             padding: 60px 0;
@@ -173,14 +174,14 @@ const Home = () => {
             display: flex;
             align-items: center;
             gap: 10px;
-            word-break: break-word; /* Allow text to break and wrap */
+            word-break: break-word;
           }
           
           .app-header-image {
             height: 200px;
             width: auto;
-            max-width: 100%; /* Ensure image scales down on smaller screens */
-            object-fit: contain; /* Prevent cropping */
+            max-width: 100%;
+            object-fit: contain;
           }
           
           .hero-subtitle {
@@ -245,7 +246,7 @@ const Home = () => {
             position: relative;
             width: 320px;
             height: 700px;
-            max-height: 70vh; /* Limit height on mobile to prevent overflow */
+            max-height: 70vh;
             overflow: hidden;
           }
           
@@ -373,6 +374,29 @@ const Home = () => {
             transform: scale(1.05);
           }
           
+          .coming-soon-wrapper {
+            position: relative;
+            cursor: not-allowed;
+          }
+          
+          .coming-soon-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+          }
+          
+          .disabled {
+            opacity: 0.5;
+            filter: grayscale(100%);
+          }
+          
           .download-note {
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.9rem;
@@ -386,13 +410,13 @@ const Home = () => {
             }
             
             .hero-title {
-              font-size: 2rem; /* Reduced for mobile */
-              flex-wrap: wrap; /* Allow wrapping */
+              font-size: 2rem;
+              flex-wrap: wrap;
             }
             
             .app-header-image {
-              height: 120px; /* Reduced height for mobile */
-              max-width: 80%; /* Scale down further */
+              height: 120px;
+              max-width: 80%;
             }
             
             .hero-subtitle {
@@ -406,7 +430,7 @@ const Home = () => {
             .phone-mockup {
               width: 260px;
               height: 570px;
-              max-height: 60vh; /* Further limit height on mobile */
+              max-height: 60vh;
             }
             
             .features-grid {
